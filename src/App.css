@@ -1,0 +1,7 @@
+.bg-image-set {
+  background: url(subway.jpg);
+  background-size: 100%, 100%;
+  opacity: 1;
+  background-repeat: no-repeat;
+  filter: blur(10px);
+}

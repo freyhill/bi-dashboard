@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.title-with-before {
+  display: flex;
+  align-items: center;
+}
+.title-with-before::before {
+  content: '';
+  width: 3px;
+  height: 18px;
+  background-color: rgba(73, 132, 230, 255);
+  margin-right: 8px; /* 可以根据需要调整间距 */
+  display: inline-block;
+  align-items: center;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ECharts 西安地图展示</title>
+    <script src="https://api.map.baidu.com/api?v=3.0&ak=PlhFWpA02aoURjAOpnWcRGqw7AI8EEyO"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  </head>
+  <body style="height: 100%; margin: 0">
+    <div id="main" style="height: 100%"></div>
+    <script>
+      // 创建百度地图实例
+      var map = new BMap.Map('main');
+      map.centerAndZoom(new BMap.Point(108.940175, 34.341568), 11); // 设置中心点和缩放级别
+      map.enableScrollWheelZoom(true); // 启用滚轮缩放
+
+      // 初始化 echarts 实例
+      var chart = echarts.init(document.getElementById('main'));
+
+      // 异步加载西安的 GeoJSON 数据
+      fetch(
+        'https://geo.datav.aliyun.com/areas_v3/bound/geojson?code=610100_full',
+      )
+        .then((response) => response.json())
+        .then((geoJson) => {
+          // 注册地图
+          echarts.registerMap('xian', geoJson);
+
+          // 设置地图选项
+          var option = {
+            title: {
+              text: '西安地图',
+              left: 'center',
+            },
+            tooltip: {
+              trigger: 'item',
+              formatter: function (params) {
+                // 自定义提示框内容
+                return (
+                  params.name +
+                  '<br />信息: ' +
+                  (params.data ? params.data.info : '无')
+                );
+              },
+            },
+            series: [
+              {
+                name: '西安',
+                type: 'map',
+                map: 'xian',
+                roam: true,
+                label: {
+                  show: true,
+                },
+                itemStyle: {
+                  normal: {
+                    borderColor: '#389BB7',
+                    areaColor: '#fff',
+                  },
+                  emphasis: {
+                    areaColor: '#389BB7',
+                    borderWidth: 0,
+                  },
+                },
+                data: [
+                  // 在这里添加城市的详细信息
+                  { name: '莲湖区', value: 10, info: '这里是莲湖区' },
+                  { name: '碑林区', value: 20, info: '这里是碑林区' },
+                  // 其他区的信息
+                ],
+              },
+            ],
+          };
+
+          // 使用配置项和数据显示图表
+          chart.setOption(option);
+        });
+    </script>
+  </body>
+</html>
