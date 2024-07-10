@@ -60,7 +60,7 @@ const Map: React.FC = () => {
         backgroundColor: 'transparent',
         bmap: {
           center: [116.404117, 39.915351],
-          //center: [108.94, 34.26],
+          // center: [108.94, 34.26],
           zoom: 12.2,
           roam: true,
           mapStyle: {
