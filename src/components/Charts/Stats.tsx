@@ -37,14 +37,25 @@ const TransactionTable: React.FC = () => {
       <div className="flex">
         <div className={cellStyle1}>
           <NumberScroller
-            start={num1}
-            end={num}
-            interval={2000}
-            animationDuration={1000}
+            color="text-gradient-a"
+            number={1234}
+            duration={2000}
           />
         </div>
-        <div className={cellStyle1}>{200}</div>
-        <div className={cellStyle1}>{300}</div>
+        <div className={cellStyle1}>
+          <NumberScroller
+            color="text-gradient-b"
+            number={32222}
+            duration={2000}
+          />
+        </div>
+        <div className={cellStyle1}>
+          <NumberScroller
+            color="text-gradient-c"
+            number={4000002}
+            duration={2000}
+          />
+        </div>
       </div>
     </div>
   );

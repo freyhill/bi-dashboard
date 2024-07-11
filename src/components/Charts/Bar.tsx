@@ -2,24 +2,53 @@ import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 
 const BarChart: React.FC = () => {
-  const [lineData, setLineData] = useState([5, 20, 36, 10, 10, 20]);
-  useEffect(() => {
-    // setInterval(() => {
-    //   const lineData2 = lineData.slice();
-    //   const result = lineData2.map((item) => {
-    //     return item + Math.floor(Math.random() * 10);
-    //   });
-    //   setLineData(result);
-    // }, 3000);
-  }, [lineData]);
+  const [lineData, setLineData] = useState([200, 212, 214, 217, 218, 230, 237]);
+
+  const option = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow',
+      },
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true,
+    },
+    xAxis: [
+      {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        axisTick: {
+          alignWithLabel: true,
+        },
+      },
+    ],
+    yAxis: [
+      {
+        type: 'value',
+      },
+    ],
+    series: [
+      {
+        name: 'Direct',
+        type: 'bar',
+        barWidth: '60%',
+        data: [10, 52, 200, 334, 390, 330, 220],
+      },
+    ],
+  };
   const barOptions = {
     tooltip: {
-      textStyle: {
-        color: '#ffffff',
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow',
       },
     },
     xAxis: {
-      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+      data: ['7/6', '7/7', '7/8', '7/9', '7/10', '7/11', '7/12'],
       axisLine: {
         lineStyle: {
           color: '#ffffff',
@@ -41,7 +70,7 @@ const BarChart: React.FC = () => {
     },
     series: [
       {
-        name: '销量',
+        name: '增量',
         type: 'bar',
         barWidth: '50%', // 调整柱子的宽度
         data: lineData,
@@ -60,11 +89,11 @@ const BarChart: React.FC = () => {
             colorStops: [
               {
                 offset: 0,
-                color: '#fec507', // 渐变色起点
+                color: '#FCCF31', // 渐变色起点
               },
               {
                 offset: 1,
-                color: '#feb146', // 渐变色终点
+                color: '#F55555', // 渐变色终点
               },
             ],
           },

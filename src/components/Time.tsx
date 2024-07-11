@@ -28,7 +28,7 @@ const Time = () => {
 
   return (
     <div>
-      <p className="text-cyan-50">{formattedDateTime()}</p>
+      <p className="text-cyan-600">{formattedDateTime()}</p>
     </div>
   );
 };

@@ -10,38 +10,52 @@ interface Transaction {
 
 const transactions: Transaction[] = [
   {
-    username: '苏先生',
-    time: '2019-09-16',
-    operation: '贷款',
-    amount: '¥ 0.00',
+    username: '完整性',
+    time: '18',
+    operation: '3245',
+    amount: '2',
     product: '测试产品签约',
   },
   {
-    username: '范先生',
-    time: '2019-09-16',
-    operation: '贷款',
-    amount: '¥ 85,000.00',
+    username: '一致性',
+    time: '16',
+    operation: '2682',
+    amount: '3',
     product: '测试产品签约',
   },
   {
-    username: '张先生',
-    time: '2019-09-16',
-    operation: '贷款',
-    amount: '¥ 44,000.00',
+    username: '相关性',
+    time: '20',
+    operation: '1678',
+    amount: '6',
     product: '测试产品签约',
   },
   {
-    username: '钱先生',
-    time: '2019-09-16',
-    operation: '贷款',
-    amount: '¥ 63,000.00',
+    username: '准确性',
+    time: '30',
+    operation: '2234',
+    amount: '8',
     product: '测试产品签约',
   },
   {
-    username: '刘先生',
-    time: '2019-09-16',
-    operation: '贷款',
-    amount: '¥ 18,000.00',
+    username: '及时性',
+    time: '25',
+    operation: '1235',
+    amount: '8',
+    product: '测试产品签约',
+  },
+  {
+    username: '唯一性',
+    time: '31',
+    operation: '1235',
+    amount: '4',
+    product: '测试产品签约',
+  },
+  {
+    username: '时效性',
+    time: '20',
+    operation: '1235',
+    amount: '2',
     product: '测试产品签约',
   },
 ];
@@ -52,14 +66,14 @@ const TransactionTable: React.FC = () => {
   return (
     <div className="transaction-table">
       <div className="row text-sm font-bold  border-b border-b-[#304c60] flex text-cyan-500">
-        <div className={cellStyle}>用户名</div>
-        <div className={cellStyle}>时间</div>
-        <div className={cellStyle}>操作</div>
-        <div className={cellStyle}>金额</div>
+        <div className={cellStyle}>检查类型</div>
+        <div className={cellStyle}>规划个数</div>
+        <div className={cellStyle}>检查条数</div>
+        <div className={cellStyle}>异常条数</div>
       </div>
       {transactions.map((transaction, index) => (
         <div
-          className="row border-b border-b-[#304c60] text-sm flex"
+          className="row py-1 border-b border-b-[#304c60] text-sm flex"
           key={index}
         >
           <div className={cellStyle}>{transaction.username}</div>

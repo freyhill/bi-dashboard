@@ -1,52 +1,47 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface NumberScrollerProps {
-  start: number;
-  end: number;
-  interval: number; // 每隔多长时间更新一次（毫秒）
-  animationDuration: number; // 动画持续时间（毫秒）
+interface RandomNumberProps {
+  number: number;
+  duration: number;
+  color: string;
 }
 
-const NumberScroller: React.FC<NumberScrollerProps> = ({
-  start,
-  end,
-  interval,
-  animationDuration,
+const RandomNumber: React.FC<RandomNumberProps> = ({
+  number,
+  duration,
+  color,
 }) => {
-  const [currentNumber, setCurrentNumber] = useState(start);
-  const currentNumberRef = useRef(start);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const startTimeRef = useRef<number | null>(null);
+  const [currentNumber, setCurrentNumber] = useState(number);
 
   useEffect(() => {
-    const difference = end - start;
-    const step = difference / (animationDuration / interval);
+    const interval = setInterval(() => {
+      setCurrentNumber((prevNumber) =>
+        getRandomNumberWithSameDigits(prevNumber),
+      );
+    }, duration);
 
-    intervalRef.current = setInterval(() => {
-      startTimeRef.current = Date.now();
+    return () => clearInterval(interval);
+  }, [duration]);
 
-      const update = () => {
-        const now = Date.now();
-        const elapsedTime = now - startTimeRef.current!;
-        const progress = Math.min(elapsedTime / animationDuration, 1);
-        setCurrentNumber(Math.round(start + difference * progress));
+  const getRandomNumberWithSameDigits = (num: number): number => {
+    const numStr = num.toString();
+    const numLength = numStr.length;
+    const randomDigit = Math.floor(Math.random() * 10);
+    const randomPosition = Math.floor(Math.random() * numLength);
 
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        }
-      };
+    const newNumStr = numStr
+      .split('')
+      .map((digit, idx) => (idx === randomPosition ? randomDigit : digit))
+      .join('');
 
-      requestAnimationFrame(update);
-    }, interval);
+    return parseInt(newNumStr, 10);
+  };
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [start, end, interval, animationDuration]);
-
-  return <div className="number-scroller">{currentNumber}</div>;
+  return (
+    <div>
+      <h1 className={color}>{currentNumber}</h1>
+    </div>
+  );
 };
 
-export default NumberScroller;
+export default RandomNumber;

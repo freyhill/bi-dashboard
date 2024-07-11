@@ -1,7 +1,58 @@
+@import url('./font.css');
 .bg-image-set {
   background: url(subway.jpg);
   background-size: 100%, 100%;
   opacity: 1;
   background-repeat: no-repeat;
   filter: blur(10px);
+}
+
+.text-gradient-a {
+  background-image: linear-gradient(to right, #ff9d6c, #bb4e75);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+.text-gradient-b {
+  background-image: linear-gradient(to right, #feb692, #ea5455);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+.text-gradient-c {
+  background-image: linear-gradient(to right, #ff6fd8, #3813c2);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px;
+}
+
+.gradient-text {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6fd8, #1e90ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 2px 2px 4px rgba(0, 0, 0, 0.2),
+    3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+  text-stroke: 1px rgba(0, 0, 0, 0.4);
 }

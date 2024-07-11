@@ -31,7 +31,8 @@ const BackGround: React.FC<BackGroundProps> = ({
     }
   } else {
     bgStyle = {
-      backgroundColor: 'rgb(75,101,133)',
+      //backgroundColor: 'rgb(75,101,133)',
+      backgroundImage: `linear-gradient( 135deg, rgb(75,101,133) 10%, #360940 100%)`,
     };
   }
 

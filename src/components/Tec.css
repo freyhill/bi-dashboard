@@ -1,0 +1,53 @@
+.tech-circuit-container {
+  width: 800px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-circuit {
+  stroke: url(#grad);
+  stroke-width: 2;
+  fill: none;
+}
+
+.tech-circuit-circle {
+  fill: url(#grad);
+}
+
+.tech-circuit-line {
+  stroke: url(#grad);
+  stroke-width: 2;
+}
+
+@keyframes gradientFlow {
+  0% {
+    stroke-dashoffset: 100%;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tech-circuit-line {
+  stroke-dasharray: 740; /* 根据线条长度调整 */
+  stroke-dashoffset: 740; /* 根据线条长度调整 */
+  animation: gradientFlow 2s linear infinite;
+}
+
+@keyframes gradientColor {
+  0% {
+    stroke: #1e90ff;
+  }
+  50% {
+    stroke: #00bfff;
+  }
+  100% {
+    stroke: #1e90ff;
+  }
+}
+
+.tech-circuit {
+  animation: gradientColor 3s ease-in-out infinite;
+}

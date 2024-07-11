@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 4617540 */
+  /* Color fonts */
+  src: url('//at.alicdn.com/t/c/font_4617540_pll0t52a8.woff2?t=1720680802287')
+      format('woff2'),
+    url('//at.alicdn.com/t/c/font_4617540_pll0t52a8.woff?t=1720680802287')
+      format('woff'),
+    url('//at.alicdn.com/t/c/font_4617540_pll0t52a8.ttf?t=1720680802287')
+      format('truetype');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-malfunction:before {
+  content: '\e687';
+}
+
+.icon-malfunction1:before {
+  content: '\e6e7';
+}
+
+.icon-malfunction2:before {
+  content: '\e62f';
+}
+
+.icon-shuju9:before {
+  content: '\e699';
+}
+
+.icon-shuju10:before {
+  content: '\e64b';
+}
+
+.icon-shuju11:before {
+  content: '\e669';
+}
+
+.icon-shujutu:before {
+  content: '\e647';
+}
+
+.icon-shujutu1:before {
+  content: '\e68d';
+}
+
+.icon-yunshujuku:before {
+  content: '\e67d';
+}
+
+.icon-shujutongji:before {
+  content: '\e624';
+}
+
+.icon-shujubaobiao:before {
+  content: '\e667';
+}
+
+.icon-shuju13:before {
+  content: '\e650';
+}
+
+.icon-shujuji:before {
+  content: '\e928';
+}
+
+.icon-shujutongji1:before {
+  content: '\e60e';
+}
+
+.icon-shuju14:before {
+  content: '\e63d';
+}
+
+.icon-shujuzhili:before {
+  content: '\e615';
+}
+
+.icon-shujutongji2:before {
+  content: '\e634';
+}
+
+.icon-jiaoyishuju:before {
+  content: '\e616';
+}
+
+.icon-shuju15:before {
+  content: '\ec5e';
+}
+
+.icon-shuju16:before {
+  content: '\e607';
+}
+
+.icon-shuju17:before {
+  content: '\e61d';
+}
+
+.icon-shijian:before {
+  content: '\e643';
+}
+
+.icon-huochezhan:before {
+  content: '\e626';
+}
+
+.icon-shuju2:before {
+  content: '\e690';
+}
+
+.icon-shuju:before {
+  content: '\e617';
+}
+
+.icon-shuju1:before {
+  content: '\e61b';
+}
+
+.icon-shujuku:before {
+  content: '\e636';
+}
+
+.icon-tianqi:before {
+  content: '\e60b';
+}
+
+.icon-shujukanban:before {
+  content: '\eb66';
+}
+
+.icon-renkou:before {
+  content: '\e630';
+}
+
+.icon-shuju3:before {
+  content: '\e691';
+}
+
+.icon-shuju4:before {
+  content: '\e680';
+}
+
+.icon-jine:before {
+  content: '\e84f';
+}
+
+.icon-shuju5:before {
+  content: '\e644';
+}
+
+.icon-shuju6:before {
+  content: '\e706';
+}
+
+.icon-shujuku1:before {
+  content: '\e997';
+}
+
+.icon-shujujianguan:before {
+  content: '\e99b';
+}
+
+.icon-shuju7:before {
+  content: '\e6df';
+}
+
+.icon-shuju8:before {
+  content: '\e61f';
+}

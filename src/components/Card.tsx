@@ -8,6 +8,8 @@ interface CardProps {
   titleColor?: string;
   backgroundColor?: string;
   children: React.ReactNode;
+  icon: string;
+  className?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -16,6 +18,8 @@ const Card: React.FC<CardProps> = ({
   titleColor,
   backgroundColor,
   children,
+  icon,
+  className,
 }) => {
   const cardStyle = {
     backgroundColor: backgroundColor || 'rgba(40,50,61,0.4)',
@@ -27,32 +31,35 @@ const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <div className={clsx(styles.cardContainer)}>
-      <div className={clsx(styles.cardBg)} style={cardStyle}></div>
-      <div className={clsx(styles.cardContent)}>
+    <div
+      className={clsx('relative', 'overflow-hidden', 'rounded-md', className)}
+    >
+      <div
+        className="absolute left-0 top-0 w-[100%] h-[100%]"
+        style={cardStyle}
+      ></div>
+      <div className="relative z-2 bg-transparent px-4 py-2">
         {title ? (
           <h4
             className={clsx(
-              'pl-4 pt-4 pr-4',
-              'title-with-before',
+              !icon && 'title-with-before',
               'font-medium',
               'text-white',
               'text-lg',
+              'items-center',
+              'flex',
+              className,
             )}
             style={titleStyle}
           >
+            <i
+              style={{ color: 'red' }}
+              className={clsx('iconfont', 'mr-1', 'text-green-500', icon)}
+            ></i>
             {title}
           </h4>
         ) : null}
-        <div
-          className={clsx(
-            'pl-4 pr-4 pb-4',
-            'rounded-md',
-            'overflow-hidden',
-            'text-lg',
-            'text-white',
-          )}
-        >
+        <div className={clsx('overflow-hidden', 'text-gray-300')}>
           {children}
         </div>
       </div>
