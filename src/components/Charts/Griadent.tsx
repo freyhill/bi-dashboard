@@ -58,11 +58,11 @@ const Pie: React.FC = () => {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {
               offset: 0,
-              color: '#FCCF31',
+              color: '#52E5E7',
             },
             {
               offset: 1,
-              color: '#F55555',
+              color: '#130CB7',
             },
           ]),
         },
@@ -112,11 +112,11 @@ const Pie: React.FC = () => {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {
               offset: 0,
-              color: '#FEB692',
+              color: '#FCCF31',
             },
             {
               offset: 1,
-              color: '#EA5455',
+              color: '#F55555',
             },
           ]),
         },

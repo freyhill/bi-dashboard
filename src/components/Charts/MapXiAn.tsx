@@ -55,7 +55,7 @@ const Map: React.FC = () => {
     const loadBMap = () => {
       const hStep = 300 / (data.length - 1);
       const busLines: BusLineData[] = transformBusLines(data, hStep);
-      console.log('busLines', JSON.stringify(busLines.slice(0, 5)));
+      // console.log('busLines', JSON.stringify(busLines.slice(0, 5)));
       const options = {
         backgroundColor: 'transparent',
         bmap: {
@@ -191,20 +191,20 @@ const Map: React.FC = () => {
           type: 'lines',
           coordinateSystem: 'bmap',
           data: [
-            // {
-            //   coords: line.coords,
-            // },
+            {
+              coords: line.coords,
+            },
           ],
           polyline: true,
-          lineStyle: {
-            color: 'red',
-            type: 'dashed',
-            join: 'round',
-            inactiveColor: '#fff',
-            shadowOffsetX: 1,
-            width: 4,
-            opacity: 0.8,
-          },
+          //   lineStyle: {
+          //     color: '#D939CD',
+          //     type: '',
+          //     join: 'round',
+          //     inactiveColor: '#fff',
+          //     shadowOffsetX: 1,
+          //     width: 4,
+          //     opacity: 0.8,
+          //   },
           effect: {
             show: true,
             constantSpeed: 30,

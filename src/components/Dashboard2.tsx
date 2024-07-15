@@ -10,7 +10,7 @@ import Pie from './Charts/Pie';
 import Griaddent from './Charts/Griadent';
 import Map from './Charts/Map';
 import Tec from './Tec';
-import MapXiAn from './Charts/Map';
+import MapXiAn from './Charts/MapXiAn';
 import Radar from './Charts/Radar';
 import { pieData1, pieData2, pieColor1, pieColor2 } from '../data/pieData';
 const Dashboard: React.FC = () => {
